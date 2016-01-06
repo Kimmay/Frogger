@@ -1,6 +1,9 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+Hello! Welcome to Frogger!
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+In this game, you want to get your character to the water before being overrun by bugs. Use the arrow keys to guide your character around the screen, 
+but be careful! If you touch a bug, you will lose a life point. Once your life points reach zero, the game will end. Also watch out for rocks that 
+block your path! You'll have to navigate around them while keeping away from all the bugs in order to win the game. The scoreboard on the bottom keeps 
+track of how many wins you currently have.
