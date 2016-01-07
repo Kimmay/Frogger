@@ -1,5 +1,8 @@
-frontend-nanodegree-arcade-game
+Frogger Javascript Arcade Game
 ===============================
+
+To run this game: open index.html in your web browser
+
 
 Hello! Welcome to Frogger!
 

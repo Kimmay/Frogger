@@ -64,7 +64,7 @@ Player.prototype.render = function() {
 // Handles the arrow keys for moving the player around the screen
 // Checks for rock positions, player can't move where there are rocks.
 Player.prototype.handleInput = function(key) {
-    if(this.yloc < 102 && key === 'up') {
+    if(this.yloc < 101 && key === 'up' && rockCollision(this.xloc, this.yloc) === false) {
         //we win!
         winner = true;
     }
@@ -74,11 +74,11 @@ Player.prototype.handleInput = function(key) {
     if(key === 'right' && this.xloc < 404 && rockCollision(this.xloc + 101, this.yloc) === false) {
         this.xloc += 101;
     };
-    if(key === 'up' && this.yloc > 101 && rockCollision(this.xloc, this.yloc - 101) === false) {
-        this.yloc -= 101;
+    if(key === 'up' && this.yloc > 101 && rockCollision(this.xloc, this.yloc - 85) === false) {
+        this.yloc -= 85;
     };
-    if(key === 'down' && this.yloc < 404 && rockCollision(this.xloc, this.yloc + 101) === false) {
-        this.yloc += 101;
+    if(key === 'down' && this.yloc < 404 && rockCollision(this.xloc, this.yloc + 85) === false) {
+        this.yloc += 85;
     };
 
 };
@@ -116,7 +116,7 @@ Health.prototype.decrease = function() {
 
 // Health points have reached zero. You die now
 Health.prototype.isGameOver = function() {
-    if(this.hitPoints == 0) {
+    if(this.hitPoints === 0) {
         return true;
     } else {
         return false;
@@ -235,23 +235,23 @@ function getRockPosition(tileNum) {
             break;
         case 6:
             coordinates.push(15);
-            coordinates.push(170);
+            coordinates.push(175);
             break;
         case 7:
             coordinates.push(115);
-            coordinates.push(170);
+            coordinates.push(175);
             break;
         case 8:
             coordinates.push(215);
-            coordinates.push(170);
+            coordinates.push(175);
             break;
         case 9:
             coordinates.push(315);
-            coordinates.push(170);
+            coordinates.push(175);
             break;
         case 10:
             coordinates.push(415);
-            coordinates.push(170);
+            coordinates.push(175);
             break;
         case 11:
             coordinates.push(15);
@@ -280,7 +280,7 @@ function getRockPosition(tileNum) {
 // checks to see if the space being moved to is occupied by a rock.
 function rockCollision(newXloc, newYloc) {
     for(var i = 0; i < rocks.length; i++) {
-        if(newXloc + 34 >= rocks[i].xloc + 7 && newXloc + 68 <= rocks[i].xloc + 66 && newYloc + 121 >= rocks[i].yloc + 50 && newYloc + 141 <= rocks[i].yloc + 117) {
+        if(newXloc + 34 >= rocks[i].xloc + 7 && newXloc + 68 <= rocks[i].xloc + 66 && newYloc + 131 >= rocks[i].yloc + 50 && newYloc + 141 <= rocks[i].yloc + 117) {
             //rock
             return true;
         } 
@@ -295,7 +295,7 @@ function rockCollision(newXloc, newYloc) {
 
 var allEnemies = createBugs();
 
-var player = new Player(205, 320);
+var player = new Player(205, 310);
 
 var health = new Health(4);
 
